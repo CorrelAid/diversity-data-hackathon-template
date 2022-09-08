@@ -1,5 +1,6 @@
 library(DBI)
 library(RPostgres)
+library(readr)
 
 # extract environment variables
 db_name <- Sys.getenv("SUPAB_NAME")
@@ -9,16 +10,19 @@ db_user <- Sys.getenv("SUPAB_USER")
 db_password <- Sys.getenv("SUPAB_PASSWORD")
 
 # create connection
-con <- dbConnect(drv = RPostgres::Postgres(),
+con <- DBI::dbConnect(drv = RPostgres::Postgres(),
                  host = db_host,
                  port = db_port,
                  dbname = db_name,
                  user = db_user,
                  password = db_password)
 
-dbListTables(con)
+DBI::dbListTables(con)
 
 # replace table_name with the name of the table you need to use
-df <- dbReadTable(con, "table_name")
+df <- DBI::dbReadTable(con, "table_name")
 
 readr::write_rds(df, here::here("data", "raw", "data.rds"))
+
+# code to show how to reimport data file - copy to your code if needed
+df <- readr::read_rds(here::here("data", "raw", "data.rds"))
