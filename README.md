@@ -103,7 +103,7 @@ Copy the command to your terminal of choice and run it. You'll be prompted to en
 
 Once you have successfully opened the connection, run `code/00-setup-limesurvey.R`
 
-:warn: the SSH connection might close after a couple of minutes, so you might have to reconnect in the terminal.
+:warning: the SSH connection might close after a couple of minutes, so you might have to reconnect in the terminal.
 
 #### Windows 
 If you have never worked with SSH before, ask Frie or one of the coaches about it. They'll have a look together with you.
