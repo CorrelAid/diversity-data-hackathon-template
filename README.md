@@ -89,8 +89,11 @@ In the R console, run:
 glue::glue("ssh -L localhost:5555:127.0.0.1:3306 {ssh_user}@{ssh_ip}")
 ```
 
+this builds a "tunnel" from your local machine on port 5555 to the port 3306 (the MySQL port) on the server. We can then use port 5555 on our machine to connect and communicate with MySQL.
+
 #### MacOS/Linux/Windows with WSL or working SSH 
 If you have:
+
 - MacOS
 - Linux
 - a Windows machine but have a way to run SSH commands in the console (e.g. in [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install))
