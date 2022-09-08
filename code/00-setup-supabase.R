@@ -26,3 +26,5 @@ readr::write_rds(df, here::here("data", "raw", "data.rds"))
 
 # code to show how to reimport data file - copy to your code if needed
 df <- readr::read_rds(here::here("data", "raw", "data.rds"))
+
+DBI::dbDisconnect(con)
