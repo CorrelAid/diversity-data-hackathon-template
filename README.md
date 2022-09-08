@@ -23,17 +23,34 @@ renv::restore()
 3. commit and push the updated `renv.lock`
 
 ## Access data
-
 To access the data for this challenge, proceed as follows:
 
 1. Check the Slack channel for the "secret link" for your challenge
 2. We'll share the password to decrypt the message on-site 
 3. Click on the link and enter the password to decrypt the message
-4. Open the `.env` / `.Renviron` file - if you don't see either file in your (RStudio) explorer, ask for help
-5. Copy the content to the `.Renviron` / `.env` file 
-6. Run `code/00-setup.R` 
+4. Follow the specific instructions for your data below.
 
+### Supabase/Postgres
 
+To connect to the Supabase Postgres database, you need to store your credentials in the `.Renviron` file:
+
+```
+# set up passwords in .Renviron
+usethis::edit_r_environ()
+```
+
+Copy the content from the decrypted secret link. It should look something like this:
+
+```
+# logins for supabase
+SUPAB_NAME='postgres'
+SUPAB_HOST='your-supabase-url' 
+SUPAB_PORT='5432'
+SUPAB_USER='postgres'
+SUPAB_PASSWORD='your-supabase-pw'
+```
+
+Run `code/00-connect-postgres.R`
 
 # Developer information
 
