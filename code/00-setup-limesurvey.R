@@ -12,7 +12,7 @@ sql_password <- Sys.getenv("LIMESURVEY_SQL_PASSWORD")
 # PREREQUISITE: ssh tunnel/port forwarding -> see README
 con <- DBI::dbConnect(
   RMariaDB::MariaDB(), 
-  dbname = "ve_limesurvey2", # or ve_limesurvey_test
+  dbname = "ve_limesurvey_test",
   host = "127.0.0.1", 
   port = 5555, 
   user = sql_user,
